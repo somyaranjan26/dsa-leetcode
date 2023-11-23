@@ -35,10 +35,21 @@ def minSizeArraySum1(target, nums):
 
 def minSizeArraySum2(target, nums):
     result = float('inf')
+    length = len(nums)
+    total, l = 0, 0
     
-    return result
+    for r in range(length):
+        total += nums[r]
+        
+        while total >= target:
+            result = min(r - l + 1, result)
+            total -= nums[l]
+            l += 1
+        
+    
+    return 0 if result == float('inf') else result
 
-target = 17
-# nums = [4,3,2,3,1]
-nums = [1,1,1,1,1,1,1,1]
+target = 7
+nums = [4,3,2,3,1]
+# nums = [1,1,1,1,1,1,1,1]
 print(minSizeArraySum1(target, nums))
