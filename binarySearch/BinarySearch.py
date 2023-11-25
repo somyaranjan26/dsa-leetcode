@@ -17,6 +17,10 @@ def binarySearch(arr, key):
         
         # adding l and r may cause overflow
         # example: l = 2^31 - 1, r = 2^31 - 1
+        # ! why we are doing (r-l) / 2 instead of (r+l) / 2
+        # ! because (r+l) / 2 may cause overflow if r and l are large enough numbers
+        # ? eg: l = 2, r = 5 => (r+l) // 2 = 3
+        # ? but l + (r-l) / 2 = 3; which is the correct answer
         mid = l + (r - l) // 2
         
         if key == arr[mid]:
