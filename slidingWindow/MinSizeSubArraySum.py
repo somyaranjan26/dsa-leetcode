@@ -52,4 +52,4 @@ def minSizeArraySum2(target, nums):
 target = 7
 nums = [4,3,2,3,1]
 # nums = [1,1,1,1,1,1,1,1]
-print(minSizeArraySum1(target, nums))
+print(minSizeArraySum2(target, nums))
