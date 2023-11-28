@@ -12,10 +12,12 @@ def topKFreq(nums, k):
     print(heap)
     
     while len(heap)-1 > 0:
+        # ? [1] is the index of the key in the tuple
         print(heapq.heappop(heap)[1])
         print(heap)
         k -= 1
-        
+    
+    # ? freq is the first element in the tuple
     return [ nums for (freq, nums) in heap]
     
     
